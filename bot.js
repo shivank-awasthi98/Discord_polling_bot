@@ -40,7 +40,7 @@ client.on('message',(message) => {
 
     //reset command
     if((message.content.startsWith("!reset")&& message.channel.type=="text" )){
-        console.log("reset started")
+        
         poll_started_flag = false
         voted = []
         active = []
@@ -97,8 +97,7 @@ client.on('message',(message) => {
     }
     //annonymys polling on dms
     if((message.content.startsWith("!")&& message.channel.type == "dm")){
-        console.log(voted,active)
-        console.log(message.content)
+        
         user_id = message.channel.recipient.id
         //check to see if any active polls exists
         if(poll_started_flag){
@@ -118,7 +117,7 @@ client.on('message',(message) => {
                     //assiginng vote
                     if((message.content.startsWith(`!${key}`) && active.includes(user_id))){
                         voted.push(user_id)
-                        console.log(voted)
+                        
                         arg_dict[key] = value+1
                         message.channel.send(`voted for ${key}`)
                         valid_responce_flag =  true
@@ -137,7 +136,7 @@ client.on('message',(message) => {
                 }
 
                 if(voted.length==active.length){
-                    console.log("voted all")
+                    
                     clearTimeout(timer)
                     calculateResult()
                 }
