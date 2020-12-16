@@ -97,6 +97,7 @@ client.on('message',(message) => {
     }
     //annonymys polling on dms
     if((message.content.startsWith("!")&& message.channel.type == "dm")){
+        console.log(voted,active)
         console.log(message.content)
         user_id = message.channel.recipient.id
         //check to see if any active polls exists
