@@ -1,5 +1,5 @@
 const Dicord = require('discord.js');
-const config = require("./config.json")
+
 
 const client = new Dicord.Client();
 
@@ -8,7 +8,7 @@ client.once('ready',() => {
 });
 
 
-client.login(config.serect_key)
+client.login(process.env.serect_key)
 
 poll_started_flag = false
 valid_responce_flag = false
