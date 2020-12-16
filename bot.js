@@ -44,7 +44,7 @@ client.on('message',(message) => {
         poll_started_flag = false
         voted = []
         active = []
-        args_dict = {}
+        for (var member in arg_dict) delete arg_dict[member];
         console.log(poll_started_flag,voted,active,arg_dict)
     }
 
