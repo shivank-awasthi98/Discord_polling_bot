@@ -40,11 +40,12 @@ client.on('message',(message) => {
 
     //reset command
     if((message.content.startsWith("!reset")&& message.channel.type=="text" )){
-        
+        console.log("reset started")
         poll_started_flag = false
         voted = []
         active = []
         args_dict = {}
+        console.log(poll_started_flag,voted,active,arg_dict)
     }
 
 
@@ -56,9 +57,10 @@ client.on('message',(message) => {
 
     //poll command
     if((message.content.startsWith("!poll")&& message.channel.type=="text" )){
-      
-       channel_id = message.member.voice.channel.id
-      server_channel = message.channel
+        
+
+        channel_id = message.member.voice.channel.id
+        server_channel = message.channel
         
         
         
